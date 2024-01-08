@@ -5,12 +5,12 @@ import MenuItem from '@mui/material/MenuItem';
 
 const currencies = [
   {
-    value: 'กิจกรรม',
-    label: 'กิจกรรม',
+    value: 'ภาษาอังกฤษ',
+    label: 'ภาษาอังกฤษ',
   },
   {
-    value: 'จิตรกรรม',
-    label: 'จิตรกรรม',
+    value: 'ภาษาไทย',
+    label: 'ภาษาไทย',
   },
   {
     value: 'ศิลปกรรม',
@@ -36,7 +36,7 @@ export default function SelectTextFields() {
         <TextField
           id="outlined-select-currency"
           select
-          defaultValue="กิจกรรม"
+          defaultValue="ภาษาไทย"
     
         >
           {currencies.map((option) => (
