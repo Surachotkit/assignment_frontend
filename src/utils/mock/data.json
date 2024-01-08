@@ -1,0 +1,146 @@
+{
+    "columns": [
+        {
+            "field": "id",
+            "hide": true
+        },
+        {
+            "field": "name",
+            "headerName": "ชื่อผลงาน",
+            "width": 200,
+            "editable": false
+        },
+        {
+            "field": "typeOfWork",
+            "headerName": "ประเภทผลงาน",
+            "width": 200,
+            "editable": false
+        },
+        {
+            "field": "startDate",
+            "headerName": "วันที่เริ่มแสดงผลงาน",
+            "width": 200,
+            "editable": false
+        },
+        {
+            "field": "endDate",
+            "headerName": "วันที่สิ้นสุดแสดงผลงาน",
+            "width": 200,
+            "editable": false
+        },
+        {
+            "field": "status",
+            "headerName": "สถานะ",
+            "width": 200,
+            "editable": false
+        },
+        {
+            "field": "details",
+            "headerName": "",
+            "width": 200,
+            "editable": false
+        }
+    ],
+    "rows": [
+        {
+            "id": "c9003fc7-4016-5353-9c14-4b7e21567a6e",
+            "name": "เจ้าขุนทอง",
+            "typeOfWork": "วรรณกรรม",
+            "startDate": "01/8/2023",
+            "endDate": "24/10/2023",
+            "status": "แสดง",
+            "details": "รายละเอียด"
+        },
+        {
+            "id": "8f16a4fb-3290-58c2-82ad-fe7f37776b58",
+            "name": "ภาพวาดต้นไม้",
+            "typeOfWork": "ศิลปกรรม",
+            "startDate": "10/3/2023",
+            "endDate": "18/5/2023",
+            "status": "ไม่แสดง",
+            "details": "รายละเอียด"
+        },
+        {
+            "id": "7f897d36-ee28-5a3d-8a72-cfa2b25ee6e5",
+            "name": "เจ้าขุนทอง",
+            "typeOfWork": "สื่อวิดิโอ",
+            "startDate": "10/3/2023",
+            "endDate": "18/5/2023",
+            "status": "ไม่แสดง",
+            "details": "รายละเอียด"
+        },
+        {
+            "id": "0c33292a-04e0-5988-99d8-3c81fd3e7e78",
+            "name": "TEST ART",
+            "typeOfWork": "Art",
+            "startDate": "10/3/2023",
+            "endDate": "18/5/2023",
+            "status": "แสดง",
+            "details": "รายละเอียด"
+        },
+        {
+            "id": "bfea642a-9d4e-5a4d-9434-611428aa461c",
+            "name": "เจ้าขุนทอง",
+            "typeOfWork": "Art",
+            "startDate": "10/3/2023",
+            "endDate": "18/5/2023",
+            "status": "ไม่แสดง",
+            "details": "รายละเอียด"
+        },
+        {
+            "id": "53e3df7f-9a68-5a99-ad21-1752a39c66eb",
+            "name": "TEST ART 5555",
+            "typeOfWork": "Art",
+            "startDate": "10/3/2023",
+            "endDate": "18/5/2023",
+            "status": "แสดง",
+            "details": "รายละเอียด"
+        },
+        {
+            "id": "f3593bbe-5b56-53f2-99a9-67deaa24eb42",
+            "name": "TEST ART",
+            "typeOfWork": "Art",
+            "startDate": "10/3/2023",
+            "endDate": "18/5/2023",
+            "status": "ไม่แสดง",
+            "details": "รายละเอียด"
+        },
+        {
+            "id": "d9813a23-cfb3-5a87-b31a-f89d2966757a",
+            "name": "TEST ART",
+            "typeOfWork": "Art",
+            "startDate": "10/3/2023",
+            "endDate": "18/5/2023",
+            "status": "แสดง",
+            "details": "รายละเอียด"
+        },
+        {
+            "id": "5ead3da8-ee6c-508b-a08e-b9cfb69dc115",
+            "name": "TEST ART 5555",
+            "typeOfWork": "Art",
+            "startDate": "10/3/2023",
+            "endDate": "18/5/2023",
+            "status": "แสดง",
+            "details": "รายละเอียด"
+        },
+        {
+            "id": "c102e76e-e7e5-5a73-bc9e-22739e7a557f",
+            "name": "TEST ART",
+            "typeOfWork": "Art",
+            "startDate": "10/3/2023",
+            "endDate": "18/5/2023",
+            "status": "ไม่แสดง",
+            "details": "รายละเอียด"
+        }
+    ],
+    "initialState": {
+        "columns": {
+            "columnVisibilityModel": {
+                "id": false
+            }
+        }
+    },
+    "experimentalFeatures": {
+        "ariaV7": true
+    }
+}
