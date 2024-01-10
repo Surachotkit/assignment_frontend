@@ -117,17 +117,16 @@ export default function EditProduct() {
           <div
             style={{ display: "flex", flexDirection: "column", width: "25%" }}
           >
-            <label>วันที่เริ่มต้น</label>
-
-            <Date />
+            {/* <label>วันที่เริ่มต้น</label>
+            <Date /> */}
           </div>
 
           <div
             style={{ display: "flex", flexDirection: "column", width: "25%" }}
           >
-            <label>วันที่สิ้นสุด</label>
+            {/* <label>วันที่สิ้นสุด</label>
 
-            <Date />
+            <Date /> */}
           </div>
         </div>
 

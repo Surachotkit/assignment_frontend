@@ -8,11 +8,13 @@ import Search from "../Search/Search";
 import styled from "@emotion/styled";
 
 
+
 export default function ControlledSelectionGrid() {
   const [rowSelectionModel, setRowSelectionModel] = React.useState([]);
-  const [currentPage, setCurrentPage] = React.useState(2);
-  const pageSize = 5;
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const pageSize = 10;
   const [rows, setRows] = React.useState([]);
+  console.log("🚀 ~ ControlledSelectionGrid ~ rows:", rows)
 
   const navigate = useNavigate();
 
@@ -75,6 +77,8 @@ export default function ControlledSelectionGrid() {
     },
   ];
 
+  
+
   const handleDetailsClick = (details) => {
     const id = details?.id;
     navigate("/detail", { state: { details: id } });
@@ -128,15 +132,20 @@ export default function ControlledSelectionGrid() {
       <DataGrid
         checkboxSelection
         pagination
-        pageSize={pageSize}
-        pageSizeOptions={[5, 10, 25, 50]}
+        // pageSizeOptions={[5, 10, 25, 50]}
         onRowSelectionModelChange={(newRowSelectionModel) => {
           setRowSelectionModel(newRowSelectionModel);
         }}
-        rowSelectionModel={rowSelectionModel}
+
+        initialState={{
+          pagination: {
+            paginationModel: { page: 0, pageSize: 5 },
+          },
+        }}
         columns={columns}
         rows={rows}
       />
+     
     </div>
   );
 }
