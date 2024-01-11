@@ -116,12 +116,38 @@ export default function ControlledSelectionGrid() {
       align-items: center;
     }
   `;
+  // seacrh
+  const [searchItem, setSearchItem] = React.useState('');
+  console.log("🚀 ~ ControlledSelectionGrid ~ searchItem:", searchItem)
+  const [filteredRows, setFilteredRows] = React.useState([]);
+  console.log("🚀 ~ ControlledSelectionGrid ~ filteredRows:", filteredRows)
+
+  const handleInput = (e) => {
+    setSearchItem( e.target.value);
+    // onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
+  };
+
+  
+  
+  let filterItem = [...rows]
+
+  if (searchItem) {
+    filterItem = rows.filter((el) => {
+      if (el.name.toLowerCase().includes(searchItem.toLowerCase())) {
+        
+        return true;
+      }
+      return false;
+    });
+  }
+
 
   return (
     <div style={{ height: 400, width: "100%", backgroundColor: "white" }}>
       <Style>
         <div className="search">
-          <Search name={"ชื่อผลงาน"} />
+          <Search name={"ชื่อผลงาน"} onChange={handleInput} />
+          {/* <Search name={"ชื่อผลงาน"} onChange={handleInput}/> */}
           <ButtonDelete
             onDeleteClick={handleDeleteClick}
             name1={"Delete"}
@@ -129,10 +155,11 @@ export default function ControlledSelectionGrid() {
           />
         </div>
       </Style>
+      {/* search */}
+      {/* {rows ? filterItem.map((el, idx) => el.name ) : null} */}
       <DataGrid
         checkboxSelection
         pagination
-        // pageSizeOptions={[5, 10, 25, 50]}
         onRowSelectionModelChange={(newRowSelectionModel) => {
           setRowSelectionModel(newRowSelectionModel);
         }}
@@ -143,7 +170,10 @@ export default function ControlledSelectionGrid() {
           },
         }}
         columns={columns}
+        // rows={rows ? filterItem.map((el, idx) => el.name ) : null}
         rows={rows}
+        // rows={searchItem ? filteredRows : rows}
+        // rows={searchItem ? filteredRows : rows}
       />
      
     </div>

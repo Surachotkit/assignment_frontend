@@ -22,7 +22,7 @@ const currencies = [
   },
 ];
 
-export default function SelectTextFields() {
+export default function SelectTextFields({value,onChange}) {
   return (
     <Box
       component="form"
@@ -37,6 +37,8 @@ export default function SelectTextFields() {
           id="outlined-select-currency"
           select
           defaultValue="ภาษาไทย"
+          value={value}
+          onChange={onChange}
     
         >
           {currencies.map((option) => (

@@ -8,7 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
-export default function CustomizedInputBase({name}) {
+export default function CustomizedInputBase({name,onChange,value}) {
   return (
     <>   
     <Paper
@@ -19,6 +19,8 @@ export default function CustomizedInputBase({name}) {
         sx={{ ml: 1, flex: 1 }}
         placeholder={name}
         inputProps={{ 'aria-label': 'search google maps' }}
+        value={value}
+        onChange={onChange}
       />
       <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />

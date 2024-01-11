@@ -13,7 +13,7 @@ export default function Footer() {
       sx={{
         width: '100%',
         position: 'absolute',
-        top: 850,
+        top: 950,
         left: 0,
         backgroundColor: '#1F3A8B', 
         p: 4,

@@ -2,12 +2,8 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export default function ValidationTextFields({name}) {
-  const [value, setValue] = React.useState('');
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
+export default function ValidationTextFields({onChange,name,value}) {
+  
 
   const isValueEmpty = value.trim() === '';
 
@@ -26,7 +22,7 @@ export default function ValidationTextFields({name}) {
           id="outlined-error"
           label={name}
           value={value}
-          onChange={handleChange}
+          onChange={onChange}
           error={isValueEmpty}
           helperText={isValueEmpty ? 'Value cannot be empty' : ''}
         />

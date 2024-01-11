@@ -13,9 +13,44 @@ import Date from "../components/Calendar/Date";
 export default function EditProduct() {
   const location = useLocation();
   const editproduct = location.state?.editproduct;
+  
+  //
+  const [formData, setFormData] = useState({
+    id: editproduct.id,
+    typeOfWork: '',
+    fname: '',
+    phoneNumber: '',
+    email: '',
+    startDate:'',
+    endDate:'',
+    status:'',
+    details:''
+  });
+  // console.log("🚀 ~ EditProduct ~ formData:", formData)
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData(prevState => ({
+  //     ...prevState,
+  //     [name]: value
+  //   }));
+  // };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // setFormData(formData)
+    console.log(formData); // Here you can send the data to your backend or perform other actions
+  };
+
+  const handleDateChange = (newStartDate, newEndDate) => {
+    setFormData({
+      ...formData,
+      startDate: newStartDate,
+      endDate: newEndDate,
+    });
+  };
 
   return (
-    <div
+    <form onSubmit={handleSubmit}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -38,8 +73,10 @@ export default function EditProduct() {
           <Link to="/">
             <ArrowBackIcon />
           </Link>
-
+          <button >
           <SaveIcon />
+
+          </button>
         </div>
       </div>
 
@@ -59,7 +96,7 @@ export default function EditProduct() {
         <h2>{editproduct.name}</h2>
         <div>
           <span>ประเภทผลงาน </span>
-          <Select />
+          <Select value={formData.typeOfWork} onChange={(e) => setFormData({ ...formData, typeOfWork: e.target.value })}/>
         </div>
 
         <div
@@ -81,13 +118,13 @@ export default function EditProduct() {
                 alignItems: "center",
               }}
             >
-              <Input name={"ชื่อ"} />
-              <Input name={"เบอร์โทรศัพท์"} />
+              <Input name={"ชื่อ"} value={formData.fname} onChange={(e) => setFormData({ ...formData, fname: e.target.value })}/>
+              <Input name={"เบอร์โทรศัพท์"} value={formData.phoneNumber} onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}/>
             </div>
           </div>
         </div>
         <div>
-          <Input name={"อีเมล"} />
+          <Input name={"อีเมล"} value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}/>
         </div>
       </div>
 
@@ -112,7 +149,12 @@ export default function EditProduct() {
             paddingBottom: "25px",
           }}
         >
-          <Radio />
+          <Radio 
+            status={formData.status} 
+            valueStart={formData.startDate} 
+            valueEnd={formData.endDate} 
+            onChange={handleDateChange}
+          />
 
           <div
             style={{ display: "flex", flexDirection: "column", width: "25%" }}
@@ -124,16 +166,16 @@ export default function EditProduct() {
           <div
             style={{ display: "flex", flexDirection: "column", width: "25%" }}
           >
-            {/* <label>วันที่สิ้นสุด</label>
+             {/* <label>วันที่สิ้นสุด</label>
 
             <Date /> */}
           </div>
         </div>
 
         <div>รายละเอียด</div>
-        <Textarea />
+        <Textarea value={formData.details} onChange={(e) => setFormData({ ...formData, details: e.target.value })}/>
       </div>
       <Footer />
-    </div>
+    </form>
   );
 }
